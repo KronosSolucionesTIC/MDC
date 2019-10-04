@@ -27,9 +27,9 @@ class Productos
     }
 
     //Trae todas las sucursales
-    public function getSucursales()
+    public function getSucursal()
     {
-        $query  = "SELECT * FROM sucursales WHERE estado_sucursal = 1";
+        $query  = "SELECT * FROM sucursal WHERE estado_sucursal = 1";
         $result = mysqli_query($this->link, $query);
         $data   = array();
         while ($data[] = mysqli_fetch_assoc($result));
@@ -38,7 +38,7 @@ class Productos
     }
 
     //Trae todas las categorias
-    public function getCategorias()
+    public function getCategoria()
     {
         $query  = "SELECT * FROM categoria WHERE estado_categoria = 1";
         $result = mysqli_query($this->link, $query);

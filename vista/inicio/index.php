@@ -5,54 +5,42 @@ include '../header.php';
 include '../../modelo/productos.php';
 $producto = new Productos();
 
-/*
-$dpto   = $producto->getDpto();
-$ciudad = $producto->getCiudad();
-$area   = $producto->getArea();
+$sucursal  = $producto->getSucursal();
+$categoria = $producto->getCategoria();
+
 ?>
 <div class="wrapper fadeInDown">
 <div id="formContent">
 <!-- Icon -->
 <div class="fadeIn first">
-<img src="../../images/fondo.jpg" class="img-fluid">
+<img src="../../img/logo.png" class="img-fluid">
 </div>
 
 <!-- Login Form -->
 <form action="../../controllers/Productos_controller.php" method="POST">
-<input type="text" id="nombre" class="fadeIn second" name="nombre" placeholder="Nombre">
-<input type="email" class="fadeIn third" id="email" name="email" autofocus placeholder="Email" required>
-<div id="div_departamento">
-<select name="fkID_departamento" id="fkID_departamento" class="fadeIn third">
-<option value="">Departamento...</option>
-<?php if (count($dpto) > 0) {
-foreach ($dpto as $column => $value) {
-?>
-<option value="<?php echo $value['idDepartamento']; ?>"><?php echo $value['nombreDepartamento']; ?></option>
+<input type="text" id="nombre_producto" class="fadeIn second" name="nombre_producto" placeholder="Nombre del producto">
+<input type="text" class="fadeIn third" id="cantidad_producto" name="cantidad_producto" autofocus placeholder="Cantidad" required>
+<div id="div_sucursal">
+<select name="fkID_sucursal" id="fkID_sucursal" class="fadeIn third">
+<option value="">Sucursal...</option>
+<?php if (count($sucursal) > 0) {
+    foreach ($sucursal as $column => $value) {
+        ?>
+<option value="<?php echo $value['id_sucursal']; ?>"><?php echo $value['nombre_sucursal']; ?></option>
 <?php }}?>
 </select>
 </div>
-<div id="div_ciudad">
-<select name="fkID_ciudad" id="fkID_ciudad" class="fadeIn third">
-<option value="">Ciudad...</option>
-<?php if (count($ciudad) > 0) {
-foreach ($ciudad as $column => $value) {
-?>
-<option value="<?php echo $value['idCiudad']; ?>"><?php echo $value['nombreCiudad']; ?></option>
+<div id="div_Categoria">
+<select name="fkID_Categoria" id="fkID_Categoria" class="fadeIn third">
+<option value="">Categoria...</option>
+<?php if (count($categoria) > 0) {
+    foreach ($categoria as $column => $value) {
+        ?>
+<option value="<?php echo $value['id_categoria']; ?>"><?php echo $value['nombre_categoria']; ?></option>
 <?php }}?>
 </select>
 </div>
-<div id="div_area">
-<select name="fkID_area" id="fkID_area" class="fadeIn third">
-<option value="">Area...</option>
-<?php if (count($area) > 0) {
-foreach ($area as $column => $value) {
-?>
-<option value="<?php echo $value['idArea']; ?>"><?php echo $value['nombreArea']; ?></option>
-<?php }}?>
-</select>
-</div>
-<input type="submit" class="fadeIn fourth" value="registrar"  name="registrar" >
+<input type="submit" class="fadeIn fourth" value="Registrar"  name="registrar" >
 </form>
 </div>
 </div>
- */
